@@ -1,0 +1,23 @@
+void moveZeroes(int* nums, int numsSize)
+ {
+    int *ptr=nums;
+    int temp;
+    int *r;
+    for(int i=0;i<numsSize;i++)
+    {
+        if(*ptr!=0)
+        {
+            ptr++;
+        } 
+        else
+        {  r=ptr;
+           while(r<&nums[numsSize-1])
+           {
+            temp=*r;
+            *r=*(r+1);
+            *(r+1)=temp;
+            r++;
+        }  
+    }
+ }
+ }   
