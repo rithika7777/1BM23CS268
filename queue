@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<conio.h>
+#define SIZE 3
+int q[SIZE];
+int front=-1,rear=-1;
+void insert(void);
+int deleteelement(void);
+void display(void);
+int main()
+{
+  int opt,val;
+  printf("\n 1.insert \n2.delete \n3.display");
+  do
+  {
+    printf("\n enter your choice");
+    scanf("%d",&opt);
+    switch(opt)
+{
+    case 1:insert();
+          break;
+    case 2: val=deleteelement();
+           if(val!=-1)
+            printf("\nThe number deleted is:%d",val);
+            break;
+     case 3: display();
+           break;
+}
+    }while(opt!=5);
+           getch();
+           return 0;
+}
+void insert()
+{
+int num;
+printf("\nEnter the number to be inserted in the queue");
+scanf("%d",&num);
+if(rear==SIZE-1)
+printf("overflow");
+else if(front==-1&& rear==-1)
+ front=rear=0;
+else
+ rear ++;
+ q[rear]=num;
+ }
+ int deleteelement()
+ {
+ int val;
+ if(front==-1 || front>rear)
+ {
+ printf("underflow");
+ return -1;
+ }
+ else{
+      val=q[front];
+      front ++;
+      if(front>rear)
+      front=rear=-1;
+       return val;
+       }
+    }
+void display()
+{
+int i;
+printf("\n");
+if(front== -1 || front> rear)
+printf("\nQueue is empty");
+else
+{
+for(i=front;i<=rear;i++)
+printf("%d",q[i]);
+}
+}
