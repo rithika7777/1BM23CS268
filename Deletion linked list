@@ -1,0 +1,112 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+void deleteFromFirst(struct Node** head) {
+    if (*head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+    struct Node* temp = *head;
+    *head = temp->next;
+    free(temp);
+}
+
+void deleteFromEnd(struct Node** head) {
+    if (*head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+    struct Node* temp = *head;
+    if (temp->next == NULL) {
+        free(temp);
+        *head = NULL;
+        return;
+    }
+    while (temp->next->next != NULL) {
+        temp = temp->next;
+    }
+    free(temp->next);
+    temp->next = NULL;
+}
+
+void deleteAtPosition(struct Node** head, int position) {
+    if (*head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+    struct Node* temp = *head;
+    if (position == 0) {
+        deleteFromFirst(head);
+        return;
+    }
+    for (int i = 0; temp != NULL && i < position - 1; i++) {
+        temp = temp->next;
+    }
+    if (temp == NULL || temp->next == NULL) {
+        printf("Position out of range\n");
+        return;
+    }
+    struct Node* next = temp->next->next;
+    free(temp->next);
+    temp->next = next;
+}
+
+void print(struct Node* head) {
+    struct Node* temp = head;
+    while (temp != NULL) {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+
+void createLinkedList(struct Node** head, int n) {
+    int data;
+    struct Node* temp;
+    
+    if (n <= 0) {
+        printf("Invalid number of nodes.\n");
+        return;
+    }
+
+    *head = (struct Node*)malloc(sizeof(struct Node));
+    if (*head == NULL) {
+        printf("Memory allocation failed!\n");
+        return;
+    }
+
+    printf("Enter data for node 1: ");
+    scanf("%d", &data);
+    (*head)->data = data;
+    (*head)->next = NULL;
+
+    temp = *head;
+
+    for (int i = 2; i <= n; i++) {
+        struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+        if (newNode == NULL) {
+            printf("Memory allocation failed!\n");
+            return;
+        }
+
+        printf("Enter data for node %d: ", i);
+        scanf("%d", &data);
+
+        newNode->data = data;
+        newNode->next = NULL;
+
+        temp->next = newNode;
+        temp = newNode;
+    }
+}
+
+int main() {
+    int choice, data, position, n;
+    struct Node* head = NULL;
+
+    printf("Enter the number
