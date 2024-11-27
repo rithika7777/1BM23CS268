@@ -12,14 +12,11 @@ struct Node* createNode(int data) {
     return newNode;
 }
 
-// Function to insert a new element at the beginning of the singly linked list
 void insertAtFirst(struct Node** head, int data) {
     struct Node* newNode = createNode(data);
     newNode->next = *head;
     *head = newNode;
 }
-
-// Function to insert a new element at the end of the singly linked list
 void insertAtEnd(struct Node** head, int data) {
     struct Node* newNode = createNode(data);
     if (*head == NULL) {
@@ -34,7 +31,6 @@ void insertAtEnd(struct Node** head, int data) {
     temp->next = newNode;
 }
 
-// Function to insert a new element at a specific position in the singly linked list
 void insertAtPosition(struct Node** head, int data, int position) {
     struct Node* newNode = createNode(data);
     if (position == 0) {
