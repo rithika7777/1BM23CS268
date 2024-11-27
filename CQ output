@@ -1,0 +1,38 @@
+1. Insert
+2. Delete
+3. Display
+
+Enter your choice: 1
+
+Enter the element to be inserted: 20
+20 is inserted
+Enter your choice: 1
+
+Enter the element to be inserted: 30
+30 is inserted
+Enter your choice: 1
+
+Enter the element to be inserted: 40
+40 is inserted
+Enter your choice: 1
+
+Enter the element to be inserted: 50
+50 is inserted
+Enter your choice: 2
+
+The number deleted is: 20
+Enter your choice: 3
+
+Front position = 1
+        30              40      50
+Enter your choice: 1
+
+Enter the element to be inserted: 50
+50 is inserted
+Enter your choice: 3
+
+Front position = 1
+        30              40              50      50
+Enter your choice:
+
+
