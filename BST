@@ -143,3 +143,44 @@ int main() {
 
     return 0;
 }
+output:
+
+Choose an option:
+1. Insert a node into the binary tree
+2. Inorder Traversal
+3. Preorder Traversal
+4. Postorder Traversal
+5. Display Tree Structure
+6. Exit
+Enter your choice: 1
+Enter the value to insert: 50
+Enter your choice: 1
+Enter the value to insert: 30
+Enter your choice: 1
+Enter the value to insert: 20
+Enter your choice: 1
+Enter the value to insert: 70
+Enter your choice: 1
+Enter the value to insert: 80
+Enter your choice: 1
+Enter the value to insert: 40
+Enter your choice: 2
+Inorder Traversal:
+ 20  30  40  50  70  80
+Enter your choice: 3
+Preorder Traversal:
+ 50  30  20  40  70  80
+Enter your choice: 4
+Postorder Traversal:
+ 20  40  30  80  70  50
+Enter your choice:
+
+
+
+
+
+
+
+
+
+
